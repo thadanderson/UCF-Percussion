@@ -33,15 +33,30 @@ export async function proxy(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // TODO (Step 2): Add auth redirect logic here.
-  // Example:
-  //   if (!user && request.nextUrl.pathname.startsWith("/dashboard")) {
-  //     return NextResponse.redirect(new URL("/login", request.url));
-  //   }
-  //   if (!user && request.nextUrl.pathname.startsWith("/admin")) {
-  //     return NextResponse.redirect(new URL("/login", request.url));
-  //   }
-  void user;
+  const pathname = request.nextUrl.pathname;
+
+  // 1. Unauthenticated users cannot access /dashboard/*
+  if (!user && pathname.startsWith("/dashboard")) {
+    return NextResponse.redirect(new URL("/login", request.url));
+  }
+
+  // 2. Unauthenticated users cannot access /admin/*
+  if (!user && pathname.startsWith("/admin")) {
+    return NextResponse.redirect(new URL("/login", request.url));
+  }
+
+  // 3. Authenticated users visiting /login get sent to /dashboard
+  if (user && pathname === "/login") {
+    return NextResponse.redirect(new URL("/dashboard", request.url));
+  }
+
+  // 4. Non-admin users cannot access /admin/*
+  if (user && pathname.startsWith("/admin")) {
+    const role = (user.app_metadata as { role?: string } | undefined)?.role;
+    if (role !== "admin") {
+      return NextResponse.redirect(new URL("/dashboard", request.url));
+    }
+  }
 
   return supabaseResponse;
 }
