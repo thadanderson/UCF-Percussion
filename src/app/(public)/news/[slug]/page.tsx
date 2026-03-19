@@ -44,12 +44,12 @@ export default async function NewsSlugPage({
   if (!post) notFound();
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-16">
-      <h1 className="text-4xl font-bold text-ucf-black mb-3">{post.title}</h1>
+    <div className="max-w-5xl mx-auto px-6 py-16">
+      <h1 className="text-4xl font-bold text-ucf-white mb-3">{post.title}</h1>
       {post.published_at && (
-        <p className="text-gray-500 text-sm mb-8">{fmt.format(new Date(post.published_at))}</p>
+        <p className="text-ucf-white text-sm mb-8">{fmt.format(new Date(post.published_at))}</p>
       )}
-      <div className="whitespace-pre-wrap text-gray-700 leading-relaxed mt-6">
+      <div className="whitespace-pre-wrap text-ucf-white leading-relaxed mt-6">
         {post.content}
       </div>
     </div>

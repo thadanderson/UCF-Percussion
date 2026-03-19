@@ -17,13 +17,13 @@ export interface Database {
         Row: {
           id: string;
           email: string;
-          role: "student" | "faculty" | "admin";
+          role: "student" | "faculty" | "admin" | "alumni";
           created_at: string;
         };
         Insert: {
           id: string; // required: must match the auth.users UUID
           email: string;
-          role: "student" | "faculty" | "admin";
+          role: "student" | "faculty" | "admin" | "alumni";
           created_at?: string;
         };
         Update: Partial<Omit<Database["public"]["Tables"]["users"]["Insert"], "id">>;
@@ -169,6 +169,43 @@ export interface Database {
           created_at?: string;
         };
         Update: Partial<Omit<Database["public"]["Tables"]["posts"]["Insert"], "id">>;
+        Relationships: [];
+      };
+
+      alumni: {
+        Row: {
+          id: string;
+          user_id: string | null;
+          first_name: string;
+          last_name: string;
+          graduation_year: number | null;
+          degree: string | null;
+          current_role: string | null;
+          current_institution: string | null;
+          grad_school: string | null;
+          bio: string | null;
+          headshot_url: string | null;
+          published: boolean;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id?: string | null;
+          first_name: string;
+          last_name: string;
+          graduation_year?: number | null;
+          degree?: string | null;
+          current_role?: string | null;
+          current_institution?: string | null;
+          grad_school?: string | null;
+          bio?: string | null;
+          headshot_url?: string | null;
+          published?: boolean;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: Partial<Omit<Database["public"]["Tables"]["alumni"]["Insert"], "id">>;
         Relationships: [];
       };
 

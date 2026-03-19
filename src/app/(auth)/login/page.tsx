@@ -11,7 +11,7 @@ export default async function LoginPage({
     <div className="min-h-screen bg-ucf-black flex flex-col items-center justify-center px-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-ucf-gold">UCF Percussion Studio</h1>
+          <h1 className="text-3xl font-bold text-ucf-gold">UCF Percussion</h1>
           <p className="text-ucf-white mt-2 text-sm">Member Portal</p>
         </div>
 

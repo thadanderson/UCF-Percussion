@@ -2,13 +2,13 @@ export const metadata = { title: "Auditions" };
 
 export default function AuditionsPage() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-16">
-      <h1 className="text-4xl font-bold text-ucf-black mb-4">Audition Information</h1>
-      <p className="text-ucf-gold font-medium mb-8">Join the UCF Percussion Studio</p>
+    <div className="max-w-5xl mx-auto px-6 py-16">
+      <h1 className="text-4xl font-bold text-ucf-white mb-4">Audition Information</h1>
+      <p className="text-ucf-gold font-medium mb-8">Join the UCF Percussion</p>
 
-      <div className="space-y-10 text-gray-700 leading-relaxed">
+      <div className="space-y-10 text-ucf-white leading-relaxed">
         <section>
-          <h2 className="text-2xl font-bold text-ucf-black mb-3">Requirements</h2>
+          <h2 className="text-2xl font-bold text-ucf-white mb-3">Requirements</h2>
           <p>
             Prospective students should prepare a diverse audition that demonstrates technical
             facility and musicianship across the major instrument families. The following are
@@ -22,7 +22,7 @@ export default function AuditionsPage() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold text-ucf-black mb-3">How to Apply</h2>
+          <h2 className="text-2xl font-bold text-ucf-white mb-3">How to Apply</h2>
           <ol className="list-decimal list-inside space-y-2">
             <li>Apply for admission to UCF through the University Admissions office.</li>
             <li>
@@ -33,7 +33,7 @@ export default function AuditionsPage() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold text-ucf-black mb-3">Contact</h2>
+          <h2 className="text-2xl font-bold text-ucf-white mb-3">Contact</h2>
           <p>
             Questions about auditions? Email us at{" "}
             <a

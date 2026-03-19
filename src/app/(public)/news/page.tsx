@@ -17,11 +17,11 @@ export default async function NewsPage() {
   const posts = postsData as PostRow[] | null;
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-16">
-      <h1 className="text-4xl font-bold text-ucf-black mb-10">News</h1>
+    <div className="max-w-5xl mx-auto px-6 py-16">
+      <h1 className="text-4xl font-bold text-ucf-white mb-10">News</h1>
 
       {!posts || posts.length === 0 ? (
-        <p className="text-gray-500">No news yet. Check back soon.</p>
+        <p className="text-ucf-white">No news yet. Check back soon.</p>
       ) : (
         <div className="grid gap-6 sm:grid-cols-2">
           {posts.map((post) => (

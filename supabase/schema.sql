@@ -10,9 +10,12 @@
 CREATE TABLE IF NOT EXISTS public.users (
   id          uuid        PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
   email       text        NOT NULL,
-  role        text        NOT NULL CHECK (role IN ('student', 'faculty', 'admin')),
+  role        text        NOT NULL CHECK (role IN ('student', 'faculty', 'admin', 'alumni')),
   created_at  timestamptz NOT NULL DEFAULT now()
 );
+-- NOTE: If adding alumni to an existing database, run:
+-- ALTER TABLE public.users DROP CONSTRAINT users_role_check;
+-- ALTER TABLE public.users ADD CONSTRAINT users_role_check CHECK (role IN ('student', 'faculty', 'admin', 'alumni'));
 
 ALTER TABLE public.users ENABLE ROW LEVEL SECURITY;
 
@@ -212,7 +215,54 @@ CREATE POLICY "anon_read_published_posts" ON public.posts
   USING (published = true);
 
 -- ============================================================
--- 8. music_library
+-- 8. alumni
+-- ============================================================
+CREATE TABLE IF NOT EXISTS public.alumni (
+  id                  uuid        PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id             uuid        REFERENCES public.users(id) ON DELETE SET NULL,
+  first_name          text        NOT NULL,
+  last_name           text        NOT NULL,
+  graduation_year     integer,
+  degree              text,
+  current_role        text,
+  current_institution text,
+  grad_school         text,
+  bio                 text,
+  headshot_url        text,
+  published           boolean     NOT NULL DEFAULT false,
+  created_at          timestamptz NOT NULL DEFAULT now(),
+  updated_at          timestamptz NOT NULL DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS alumni_user_id_idx   ON public.alumni(user_id);
+CREATE INDEX IF NOT EXISTS alumni_published_idx ON public.alumni(published);
+
+ALTER TABLE public.alumni ENABLE ROW LEVEL SECURITY;
+
+-- Admin: full access
+CREATE POLICY "admin_all_alumni" ON public.alumni
+  FOR ALL
+  USING  ((auth.jwt() -> 'app_metadata' ->> 'role') = 'admin')
+  WITH CHECK ((auth.jwt() -> 'app_metadata' ->> 'role') = 'admin');
+
+-- Alumni: read their own row
+CREATE POLICY "alumni_read_own" ON public.alumni
+  FOR SELECT
+  USING (user_id = auth.uid());
+
+-- Alumni: update their own row
+CREATE POLICY "alumni_update_own" ON public.alumni
+  FOR UPDATE
+  USING  (user_id = auth.uid())
+  WITH CHECK (user_id = auth.uid());
+
+-- Anonymous/authenticated: read published rows
+CREATE POLICY "anon_read_published_alumni" ON public.alumni
+  FOR SELECT
+  USING (published = true);
+
+-- ============================================================
+-- 9. music_library
 -- ============================================================
 CREATE TABLE IF NOT EXISTS public.music_library (
   id               uuid        PRIMARY KEY DEFAULT gen_random_uuid(),

@@ -11,8 +11,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | UCF Percussion Studio",
-    default: "UCF Percussion Studio",
+    template: "%s | UCF Percussion",
+    default: "UCF Percussion",
   },
   description: "The University of Central Florida Percussion Studio",
 };
@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased flex flex-col min-h-screen`}>
+      <body className={`${inter.variable} antialiased flex flex-col min-h-screen bg-ucf-black text-ucf-white`}>
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
