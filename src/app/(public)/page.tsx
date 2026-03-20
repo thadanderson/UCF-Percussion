@@ -24,12 +24,18 @@ export default async function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-ucf-black text-ucf-white py-24 px-6 text-center">
+      <section className="relative bg-ucf-black text-ucf-white py-24 px-6 text-center overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-top"
+          style={{ backgroundImage: "url('/hero.jpg')" }}
+        />
+        <div className="absolute inset-0 bg-black/75" />
+        <div className="relative z-10">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           <span className="text-ucf-gold">UCF Percussion</span>
         </h1>
-        <p className="text-base md:text-lg text-gray-300 max-w-xl mx-auto mb-8">
-          World-class percussion education at the University of Central Florida.
+        <p className="text-sm md:text-base text-gray-300 max-w-2xl mx-auto mb-8 font-semibold whitespace-nowrap">
+          World-class percussion education at the University of Central Florida
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link
@@ -45,7 +51,11 @@ export default async function HomePage() {
             Learn More
           </Link>
         </div>
+        </div>
       </section>
+
+      {/* Gold divider */}
+      <div className="h-0.5 bg-ucf-gold" />
 
       {/* Upcoming Events */}
       <section className="py-16 px-6 max-w-5xl mx-auto">

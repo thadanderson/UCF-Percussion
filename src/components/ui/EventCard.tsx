@@ -2,7 +2,7 @@ import type { Database } from "@/types/database";
 
 type Event = Database["public"]["Tables"]["events"]["Row"];
 
-const fmt = new Intl.DateTimeFormat("en-US", { dateStyle: "long", timeStyle: "short" });
+const fmt = new Intl.DateTimeFormat("en-US", { dateStyle: "long", timeStyle: "short", timeZone: "America/New_York" });
 
 export default function EventCard({ event }: { event: Event }) {
   return (

@@ -9,7 +9,7 @@ export default function NavMenu({ isLoggedIn }: { isLoggedIn: boolean }) {
   const close = () => setOpen(false);
 
   return (
-    <header className="bg-ucf-black text-ucf-white px-6 py-4 relative z-50">
+    <header className="bg-ucf-black text-ucf-white px-6 py-4 relative z-50 border-b-2 border-ucf-gold">
       <nav className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="font-bold text-ucf-gold text-lg shrink-0" onClick={close}>
           UCF Percussion
