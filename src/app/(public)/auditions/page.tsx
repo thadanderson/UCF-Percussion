@@ -4,7 +4,7 @@ export default function AuditionsPage() {
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
       <h1 className="text-4xl font-bold text-ucf-white mb-4">Audition Information</h1>
-      <p className="text-ucf-gold font-medium mb-8">Join the UCF Percussion</p>
+      <p className="text-ucf-gold font-medium mb-8">Join the UCF Percussion Studio</p>
 
       <div className="space-y-10 text-ucf-white leading-relaxed">
         <section>

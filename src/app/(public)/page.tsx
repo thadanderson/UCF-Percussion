@@ -25,13 +25,13 @@ export default async function HomePage() {
     <div>
       {/* Hero */}
       <section className="bg-ucf-black text-ucf-white py-24 px-6 text-center">
-        <h1 className="text-5xl font-bold mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">
           <span className="text-ucf-gold">UCF Percussion</span>
         </h1>
-        <p className="text-lg text-gray-300 max-w-xl mx-auto mb-8">
+        <p className="text-base md:text-lg text-gray-300 max-w-xl mx-auto mb-8">
           World-class percussion education at the University of Central Florida.
         </p>
-        <div className="flex justify-center gap-4">
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link
             href="/auditions"
             className="bg-ucf-gold text-ucf-black font-semibold px-6 py-3 rounded hover:opacity-90 transition-opacity"

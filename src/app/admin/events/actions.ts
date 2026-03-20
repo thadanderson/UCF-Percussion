@@ -12,6 +12,7 @@ export async function createEvent(formData: FormData) {
     location: (formData.get("location") as string) || null,
     starts_at: formData.get("starts_at") as string,
     ends_at: (formData.get("ends_at") as string) || null,
+    image_url: (formData.get("image_url") as string) || null,
   });
 
   if (error) {
@@ -31,6 +32,7 @@ export async function updateEvent(formData: FormData) {
     location: (formData.get("location") as string) || null,
     starts_at: formData.get("starts_at") as string,
     ends_at: (formData.get("ends_at") as string) || null,
+    image_url: (formData.get("image_url") as string) || null,
   }).eq("id", id);
 
   if (error) {

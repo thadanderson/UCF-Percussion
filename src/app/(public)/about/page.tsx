@@ -4,26 +4,42 @@ export default function AboutPage() {
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
       <h1 className="text-4xl font-bold text-ucf-white mb-4">About the Studio</h1>
-      <p className="text-ucf-gold font-medium mb-8">UCF Percussion</p>
+      <p className="text-ucf-gold font-medium mb-8">The Percussion Studies Program at UCF</p>
 
       <div className="prose max-w-none space-y-6 text-ucf-white leading-relaxed">
         <p>
-          The UCF Percussion is home to a dynamic community of percussionists committed
-          to excellence in performance and musicianship. Students in the studio benefit from
-          private instruction, chamber music, and participation in the UCF Wind Ensemble,
-          Symphony Orchestra, and Percussion Ensemble.
+          The UCF Percussion Studio is a vibrant community of performers, educators, and artists
+          committed to excellence across all areas of percussion. Our philosophy centers on a
+          &ldquo;total percussion&rdquo; approach, treating every instrument area, genre, and
+          expressive outlet with equal depth and seriousness. We believe that great percussionists
+          are not specialists in a narrow sense, but versatile, curious musicians prepared for any
+          opportunity that comes their way.
         </p>
         <p>
-          Our faculty bring decades of professional experience in orchestral, chamber, and
-          solo performance, as well as a passion for developing the next generation of
-          percussionists.
+          Students in the studio benefit from weekly private instruction and masterclasses with
+          world-renowned faculty who bring decades of professional experience in orchestral,
+          chamber, and solo performance. Beyond lessons, students perform alongside their peers in
+          the UCF Wind Ensemble, Symphony Orchestra, and Percussion Ensemble, building the ensemble
+          skills and musical relationships that are central to a lasting career.
+        </p>
+        <p>
+          Our curriculum is designed to develop not only strong performers but confident educators
+          and leaders in the field. Whether your path leads to the concert stage, the classroom, or
+          both, the UCF Percussion Studio gives you the foundation to pursue it with confidence.
         </p>
         <h2 className="text-2xl font-bold text-ucf-white mt-10">Ensembles</h2>
+        <p>
+          Percussion majors have the opportunity to perform in a wide variety of chamber and large
+          ensembles across campus, including:
+        </p>
         <ul className="list-disc list-inside space-y-1">
-          <li>UCF Percussion Ensemble</li>
-          <li>UCF Wind Ensemble</li>
-          <li>UCF Symphony Orchestra</li>
-          <li>Chamber Percussion Groups</li>
+          <li>Percussion Ensemble</li>
+          <li>Steel Band</li>
+          <li>New Music Ensemble</li>
+          <li>Symphony Orchestra</li>
+          <li>Wind Ensemble</li>
+          <li>Symphonic Band</li>
+          <li>Marching Knights</li>
         </ul>
         <h2 className="text-2xl font-bold text-ucf-white mt-10">Facilities</h2>
         <p>

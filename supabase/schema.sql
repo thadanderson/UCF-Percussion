@@ -155,9 +155,12 @@ CREATE TABLE IF NOT EXISTS public.events (
   location     text,
   starts_at    timestamptz NOT NULL,
   ends_at      timestamptz,
+  image_url    text,
   published    boolean     NOT NULL DEFAULT false,
   created_at   timestamptz NOT NULL DEFAULT now()
 );
+-- NOTE: If adding image_url to an existing database, run:
+-- ALTER TABLE public.events ADD COLUMN IF NOT EXISTS image_url text;
 
 CREATE INDEX IF NOT EXISTS events_starts_at_idx ON public.events(starts_at);
 CREATE INDEX IF NOT EXISTS events_published_idx ON public.events(published);

@@ -130,6 +130,7 @@ export interface Database {
           location: string | null;
           starts_at: string;
           ends_at: string | null;
+          image_url: string | null;
           published: boolean;
           created_at: string;
         };
@@ -140,6 +141,7 @@ export interface Database {
           location?: string | null;
           starts_at: string;
           ends_at?: string | null;
+          image_url?: string | null;
           published?: boolean; // DEFAULT false
           created_at?: string;
         };

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { updateEvent } from "@/app/admin/events/actions";
+import ImageUpload from "@/components/admin/ImageUpload";
 import type { Database } from "@/types/database";
 
 type EventRow = Database["public"]["Tables"]["events"]["Row"];
@@ -78,6 +79,10 @@ export default async function EditEventPage({
             defaultValue={event.description ?? ""}
             className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ucf-gold"
           />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Event Poster</label>
+          <ImageUpload name="image_url" bucket="event-images" defaultValue={event.image_url} />
         </div>
         <button
           type="submit"
