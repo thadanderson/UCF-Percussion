@@ -31,7 +31,7 @@ export default function ImageUpload({
 
     const { error } = await supabase.storage
       .from(bucket)
-      .upload(filename, file, { upsert: true });
+      .upload(filename, file);
 
     if (error) {
       alert(`Upload failed: ${error.message}`);

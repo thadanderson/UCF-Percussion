@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { updateEvent } from "@/app/admin/events/actions";
 import ImageUpload from "@/components/admin/ImageUpload";
+import RichTextEditor from "@/components/admin/RichTextEditor";
 import type { Database } from "@/types/database";
 
 type EventRow = Database["public"]["Tables"]["events"]["Row"];
@@ -73,12 +74,7 @@ export default async function EditEventPage({
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
-          <textarea
-            name="description"
-            rows={4}
-            defaultValue={event.description ?? ""}
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ucf-gold"
-          />
+          <RichTextEditor name="description" defaultValue={event.description} />
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Event Poster</label>
