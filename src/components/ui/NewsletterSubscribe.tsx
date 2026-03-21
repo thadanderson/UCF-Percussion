@@ -21,7 +21,7 @@ export default function NewsletterSubscribe() {
   }
 
   return (
-    <div className="border-t border-white/20 mt-16 pt-10">
+    <div className="mt-4">
       <h2 className="text-xl font-bold text-ucf-white mb-1">Stay in the Loop</h2>
       <p className="text-gray-400 text-sm mb-4">
         Subscribe to get notified about upcoming events and news from UCF Percussion.
