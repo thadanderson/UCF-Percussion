@@ -22,7 +22,8 @@ export default async function EventsPage() {
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
-      <h1 className="text-4xl font-bold text-ucf-white mb-10">News &amp; Events</h1>
+      <h1 className="text-4xl font-bold text-ucf-white mb-3">News &amp; Events</h1>
+      <p className="text-ucf-gold font-medium mb-10">Concerts, performances, and announcements from the UCF Percussion Studio</p>
 
       <NewsletterSubscribe />
 
