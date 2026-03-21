@@ -41,6 +41,13 @@ export default async function AboutPage() {
           and leaders in the field. Whether your path leads to the concert stage, the classroom, or
           both, the UCF Percussion Studio gives you the foundation to pursue it with confidence.
         </p>
+        <p>
+          Visit the official{" "}
+          <a href="https://cah.ucf.edu/performingarts/studio/percussion/" className="text-ucf-gold hover:underline" target="_blank" rel="noopener noreferrer">Percussion Studio</a>
+          {" "}page on the School of{" "}
+          <a href="https://cah.ucf.edu/performingarts/" className="text-ucf-gold hover:underline" target="_blank" rel="noopener noreferrer">Performing Arts</a>
+          {" "}website.
+        </p>
 
         {/* Faculty */}
         {faculty && faculty.length > 0 && (
