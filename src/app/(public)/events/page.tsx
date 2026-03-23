@@ -31,7 +31,7 @@ export default async function EventsPage() {
         {!events || events.length === 0 ? (
           <p className="text-ucf-white">No upcoming events at this time. Check back soon.</p>
         ) : (
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="flex flex-col gap-3">
             {events.map((event) => (
               <EventCard key={event.id} event={event} />
             ))}

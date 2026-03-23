@@ -32,7 +32,7 @@ export default async function PastEventsPage() {
       {!events || events.length === 0 ? (
         <p className="text-ucf-white">No past events yet.</p>
       ) : (
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="flex flex-col gap-3">
           {events.map((event) => (
             <EventCard key={event.id} event={event} />
           ))}

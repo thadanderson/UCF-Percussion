@@ -60,7 +60,7 @@ export default async function HomePage() {
       {/* Upcoming Events */}
       <section className="py-16 px-6 max-w-5xl mx-auto">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold text-ucf-white">Upcoming Events</h2>
+          <h2 className="text-2xl font-bold text-ucf-white">News &amp; Events</h2>
           <Link href="/events" className="text-ucf-gold text-sm font-medium hover:underline">
             View all →
           </Link>
@@ -68,7 +68,7 @@ export default async function HomePage() {
         {!events || events.length === 0 ? (
           <p className="text-ucf-white text-sm">No upcoming events at this time.</p>
         ) : (
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="flex flex-col gap-3">
             {events.map((event) => (
               <EventCard key={event.id} event={event} />
             ))}
