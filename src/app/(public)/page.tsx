@@ -45,7 +45,7 @@ export default async function HomePage() {
         <div className="absolute inset-0 bg-black/75" />
         <div className="relative z-10">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          <span className="text-ucf-gold">UCF Percussion</span>
+          <span className="text-ucf-gold">UCF Percussion Studio</span>
         </h1>
         <p className="text-sm md:text-base text-gray-300 max-w-2xl mx-auto mb-8 font-semibold whitespace-nowrap">
           World-class percussion education at the University of Central Florida
