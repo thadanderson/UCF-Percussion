@@ -7,7 +7,10 @@ export default function Footer() {
 
         {/* Branding */}
         <div>
-          <p className="font-bold text-ucf-gold text-lg mb-2">UCF Percussion</p>
+          <div className="flex items-center gap-3 mb-2">
+            <img src="/logo.svg" alt="UCF Percussion logo" className="w-10 h-10" />
+            <p className="font-bold text-ucf-gold text-lg">UCF Percussion</p>
+          </div>
           <p className="text-gray-400 text-sm leading-relaxed">
             The Percussion Studies Program at the University of Central Florida.
           </p>

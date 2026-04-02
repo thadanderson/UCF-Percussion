@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     default: "UCF Percussion",
   },
   description: "The University of Central Florida Percussion Studio",
+  icons: {
+    icon: "/logo.svg",
+  },
 };
 
 export default function RootLayout({
