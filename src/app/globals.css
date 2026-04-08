@@ -19,3 +19,17 @@ body {
 input, textarea, select {
   color: #171717 !important;
 }
+
+/* Markdown content rendered from .md files */
+.content-body p { color: #ffffff; line-height: 1.75; margin-bottom: 1rem; }
+.content-body h2 { font-size: 1.5rem; font-weight: 700; color: #ffffff; margin-top: 2.5rem; margin-bottom: 0.75rem; }
+.content-body h3 { font-size: 1.25rem; font-weight: 600; color: #ffffff; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+.content-body a { color: #FFC904; font-weight: 500; }
+.content-body a:hover { text-decoration: underline; }
+.content-body ul { list-style-type: disc; margin-left: 1.25rem; margin-bottom: 1rem; }
+.content-body ol { list-style-type: decimal; margin-left: 1.25rem; margin-bottom: 1rem; }
+.content-body li { color: #ffffff; margin-bottom: 0.5rem; }
+.content-body ol > li { margin-bottom: 1.5rem; }
+.content-body ul ul, .content-body ol ul { margin-left: 1.5rem; margin-top: 0.25rem; margin-bottom: 0.25rem; }
+.content-body ul ul ul { margin-left: 1.5rem; }
+.content-body strong { font-weight: 700; }
