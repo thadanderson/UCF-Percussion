@@ -9,17 +9,22 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@google/genai": "^1.49.0",
     "@supabase/ssr": "^0.8.0",
     "@supabase/supabase-js": "^2.97.0",
     "@tiptap/extension-link": "^3.20.4",
     "@tiptap/pm": "^3.20.4",
     "@tiptap/react": "^3.20.4",
     "@tiptap/starter-kit": "^3.20.4",
+    "@tonejs/midi": "^2.0.28",
     "gray-matter": "^4.0.3",
+    "lucide-react": "^1.8.0",
     "marked": "^18.0.0",
     "next": "16.1.6",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "react-swipeable": "^7.0.2",
+    "tone": "^15.1.22"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
