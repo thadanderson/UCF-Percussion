@@ -262,4 +262,75 @@ export const PERCUSSION_DATA: LevelMap = {
       "Etude XX","Etude XXV","Etude XXXI","Etude XXXIII","Etude XXXV",
     ].map((label) => createItem(label, "Modern School")),
   },
+
+  // ── Timpani ────────────────────────────────────────────────────────
+
+  "Timpani Deficient": {
+    "Pedal to the Kettle": [
+      1,2,3,6,7,11,14,16,
+    ].map((num) => createItem(`Etude ${num}`, "Pedal to the Kettle")),
+    "Excerpts": [
+      "Bach: Christmas Cantata",
+      "Handel: Hallelujah Chorus",
+      "Mozart: Magic Flute",
+      "Beethoven: Egmont Overture",
+      "Brahms: Academic Festival Overture",
+      "Tchaikovsky: Romeo & Juliet",
+    ].map((label) => createItem(label, "Excerpts")),
+  },
+
+  "Timpani 1": {
+    "Pedal to the Kettle": [
+      6,9,10,12,18,20,21,22,29,31,
+    ].map((num) => createItem(`Etude ${num}`, "Pedal to the Kettle")),
+    "Excerpts": [
+      "Mozart: Symphony No. 39",
+      "Beethoven: Symphony No. 1",
+      "Beethoven: Symphony No. 7",
+      "Beethoven: Symphony No. 9",
+      "Brahms: Symphony No. 1",
+      "Tchaikovsky: Symphony No. 4",
+      "Strauss: Burleske",
+    ].map((label) => createItem(label, "Excerpts")),
+  },
+
+  "Timpani 2": {
+    "Pedal to the Kettle": [
+      13,19,24,25,27,28,30,
+    ].map((num) => createItem(`Etude ${num}`, "Pedal to the Kettle")),
+    "Excerpts": [
+      "Wagner: Götterdämmerung",
+      "Mahler: Symphony No. 5",
+      "Shostakovich: Symphony No. 1",
+      "Elgar: Enigma Variations",
+      "Hindemith: Symphonic Metamorphosis",
+      "Schuman: New England Triptych",
+      "Bartók: Concerto for Orchestra",
+      "Barber: Medea's Meditation & Dance",
+      "Stravinsky: Rite of Spring",
+    ].map((label) => createItem(label, "Excerpts")),
+  },
+
+  // ── Vibraphone ─────────────────────────────────────────────────────
+
+  "Vibe 1": {
+    "Jazz Mallets: In Session": [
+      "Freddie's Cousin",
+      "Afro Blue",
+      "12 in 6",
+      "Now's the Time",
+      "Rhythm Changes",
+    ].map((label) => createItem(label, "Jazz Mallets: In Session")),
+  },
+
+  "Vibe 2": {
+    "Voicing & Comping for Jazz Vibraphone": [
+      "Ballad (Here's That Rainy Day)",
+      "Medium Swing (Days of Wine & Roses)",
+      "Fast Swing (All The Things You Are)",
+      "Jazz Waltz (Bluesette)",
+      "Bossa Nova (Waves)",
+      "Samba (Blue Bossa)",
+    ].map((label) => createItem(label, "Voicing & Comping for Jazz Vibraphone")),
+  },
 };
