@@ -126,7 +126,7 @@ export default function ScoreForm({ assessmentId, studentName, existingScores }:
       </div>
 
       {/* Exam type selector */}
-      <div className="mb-8">
+      <div className="mb-6">
         <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Exam</p>
         <div className="flex gap-2">
           {(EXAM_TYPES as readonly ExamType[]).map((e) => {
@@ -150,6 +150,35 @@ export default function ScoreForm({ assessmentId, studentName, existingScores }:
           })}
         </div>
       </div>
+
+      {/* Copy scores from another faculty member */}
+      {(() => {
+        const sources = (FACULTY as readonly Faculty[]).filter(
+          (f) => f !== faculty && !!existingMap[scoreKey(f, examType)]
+        );
+        if (sources.length === 0) return null;
+        return (
+          <div className="mb-8 flex items-center gap-3 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3">
+            <span className="text-xs text-amber-700 font-semibold shrink-0">Copy scores from:</span>
+            <div className="flex gap-2 flex-wrap">
+              {sources.map((src) => (
+                <button
+                  key={src}
+                  onClick={() => {
+                    if (!confirm(`Copy ${FACULTY_LABELS[src]}'s ${EXAM_LABELS[examType]} scores to ${FACULTY_LABELS[faculty]}? This will overwrite any unsaved changes.`)) return;
+                    setScores(rowToMap(existingMap[scoreKey(src, examType)]));
+                    setStatus("idle");
+                  }}
+                  className="px-3 py-1.5 rounded text-xs font-bold bg-amber-100 text-amber-800 border border-amber-300 hover:bg-amber-200 transition-colors"
+                >
+                  {FACULTY_LABELS[src]}
+                </button>
+              ))}
+            </div>
+            <span className="text-xs text-amber-600 ml-auto hidden sm:block">Scores will not be saved until you click Save below.</span>
+          </div>
+        );
+      })()}
 
       {/* Scoring sections */}
       <div className="space-y-6">
