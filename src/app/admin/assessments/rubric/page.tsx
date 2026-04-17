@@ -2,7 +2,7 @@ import { createClient } from "@/lib/supabase/server";
 import Link from "next/link";
 import { FACULTY, FACULTY_LABELS, EXAM_LABELS, type Faculty, type ExamType } from "@/lib/assessment";
 
-export const metadata = { title: "Assessments" };
+export const metadata = { title: "Percussion Performance Assessment Rubric" };
 
 export default async function AssessmentsPage({
   searchParams,
@@ -28,14 +28,25 @@ export default async function AssessmentsPage({
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-8">
-        <h1 className="text-2xl font-bold text-gray-900">Assessments</h1>
+      <div className="mb-8">
         <Link
-          href="/admin/assessments/rubric/new"
-          className="bg-ucf-gold text-ucf-black font-semibold text-sm px-4 py-2 rounded hover:bg-yellow-400 transition-colors"
+          href="/admin/assessments"
+          className="inline-flex items-center gap-1.5 text-xs text-gray-400 hover:text-gray-700 font-semibold uppercase tracking-widest transition-colors mb-4"
         >
-          + New Assessment
+          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          Assessments
         </Link>
+        <div className="flex items-center justify-between">
+          <h1 className="text-2xl font-bold text-gray-900">Percussion Performance Assessment Rubric</h1>
+          <Link
+            href="/admin/assessments/rubric/new"
+            className="bg-ucf-gold text-ucf-black font-semibold text-sm px-4 py-2 rounded hover:bg-yellow-400 transition-colors"
+          >
+            + New Assessment
+          </Link>
+        </div>
       </div>
 
       {error && (
