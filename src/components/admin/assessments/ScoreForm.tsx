@@ -6,7 +6,7 @@ import {
   sectionTotal, grandTotal,
   type Faculty, type ExamType, type ScoreKey, type ScoreMap,
 } from "@/lib/assessment";
-import { saveScores } from "@/app/admin/assessments/actions";
+import { saveScores } from "@/app/admin/assessments/rubric/actions";
 import type { Database } from "@/types/database";
 
 type AssessmentScore = Database["public"]["Tables"]["assessment_scores"]["Row"];

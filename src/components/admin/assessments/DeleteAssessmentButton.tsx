@@ -1,6 +1,6 @@
 "use client";
 
-import { deleteAssessment } from "@/app/admin/assessments/actions";
+import { deleteAssessment } from "@/app/admin/assessments/rubric/actions";
 import { useTransition } from "react";
 
 export default function DeleteAssessmentButton({ id }: { id: string }) {

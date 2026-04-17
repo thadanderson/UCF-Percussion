@@ -23,11 +23,11 @@ export default async function ScorePage({ params }: Props) {
   return (
     <div className="max-w-xl">
       <div className="flex items-center gap-3 mb-8">
-        <Link href="/admin/assessments" className="text-sm text-gray-500 hover:text-gray-700">
+        <Link href="/admin/assessments/rubric" className="text-sm text-gray-500 hover:text-gray-700">
           ← Assessments
         </Link>
         <span className="text-gray-300">/</span>
-        <Link href={`/admin/assessments/${id}`} className="text-sm text-gray-500 hover:text-gray-700">
+        <Link href={`/admin/assessments/rubric/${id}`} className="text-sm text-gray-500 hover:text-gray-700">
           {assessment.student_name}
         </Link>
         <span className="text-gray-300">/</span>

@@ -24,7 +24,7 @@ export async function createAssessment(formData: FormData) {
     .single();
 
   if (error) redirect("/admin/assessments?error=" + encodeURIComponent(error.message));
-  redirect(`/admin/assessments/${data.id}`);
+  redirect(`/admin/assessments/rubric/${data.id}`);
 }
 
 // ── Save (upsert) one faculty's scores for one exam type ─────────────────────
@@ -79,5 +79,5 @@ export async function saveScores(payload: {
 export async function deleteAssessment(id: string) {
   const supabase = await createClient();
   await supabase.from("assessments").delete().eq("id", id);
-  redirect("/admin/assessments");
+  redirect("/admin/assessments/rubric");
 }
