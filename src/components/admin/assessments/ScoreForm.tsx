@@ -167,21 +167,37 @@ export default function ScoreForm({ assessmentId, studentName, existingScores }:
                   </span>
                 </div>
                 <div className="divide-y divide-gray-100">
-                  {criteria.map(({ key, label }) => (
-                    <div key={key} className="flex items-center justify-between px-4 py-2.5">
-                      <label className="text-sm text-gray-700 flex-1 pr-4">{label}</label>
-                      <input
-                        type="number"
-                        min={0}
-                        max={10}
-                        step={0.1}
-                        value={scores[key] ?? ""}
-                        onChange={(e) => handleInput(key, e.target.value)}
-                        placeholder="0–10"
-                        className="w-20 border border-gray-300 rounded px-2 py-1 text-sm text-center text-gray-900 focus:outline-none focus:ring-2 focus:ring-ucf-gold"
-                      />
-                    </div>
-                  ))}
+                  {criteria.map(({ key, label }) => {
+                    const hasValue = scores[key] !== undefined && scores[key] !== "";
+                    const sliderVal = hasValue ? scores[key]! : "5";
+                    return (
+                      <div key={key} className="flex items-center gap-4 px-4 py-3">
+                        <label className="text-sm text-gray-600 w-52 shrink-0 leading-tight">
+                          {label}
+                        </label>
+                        <input
+                          type="range"
+                          min={0}
+                          max={10}
+                          step={0.1}
+                          value={sliderVal}
+                          onChange={(e) => handleInput(key, e.target.value)}
+                          className="flex-1 h-1.5 cursor-pointer rounded-full"
+                          style={{ accentColor: "#FFC904" }}
+                        />
+                        <input
+                          type="number"
+                          min={0}
+                          max={10}
+                          step={0.1}
+                          value={scores[key] ?? ""}
+                          onChange={(e) => handleInput(key, e.target.value)}
+                          placeholder="—"
+                          className="w-14 border border-gray-200 rounded px-1 py-1 text-sm text-center text-gray-900 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-ucf-gold"
+                        />
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             );
