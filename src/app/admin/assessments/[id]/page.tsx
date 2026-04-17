@@ -7,7 +7,7 @@ import {
   PAR_LABELS, PAR_COLORS,
   type Faculty, type ExamType, type ScoreMap,
 } from "@/lib/assessment";
-import { deleteAssessment } from "../actions";
+import DeleteAssessmentButton from "@/components/admin/assessments/DeleteAssessmentButton";
 import type { Database } from "@/types/database";
 
 type AssessmentScore = Database["public"]["Tables"]["assessment_scores"]["Row"];
@@ -230,19 +230,7 @@ export default async function AssessmentDetailPage({ params }: Props) {
           >
             Enter Scores
           </Link>
-          <form action={deleteAssessment.bind(null, id)}>
-            <button
-              type="submit"
-              onClick={(e) => {
-                if (!confirm("Delete this assessment and all scores? This cannot be undone.")) {
-                  e.preventDefault();
-                }
-              }}
-              className="text-sm text-red-600 hover:text-red-800 font-semibold px-3 py-2 rounded border border-red-200 hover:border-red-400 transition-colors"
-            >
-              Delete
-            </button>
-          </form>
+          <DeleteAssessmentButton id={id} />
         </div>
       </div>
 
