@@ -21,6 +21,7 @@ const TOOLS = [
   { href: "/dashboard/flash-phrases",  label: "Flash Phrases" },
 ];
 
+
 export default function WikiSidebar({ nav, isAdmin = false }: WikiSidebarProps) {
   const pathname = usePathname();
   const [open, setOpen] = useState(true);
@@ -103,22 +104,20 @@ export default function WikiSidebar({ nav, isAdmin = false }: WikiSidebarProps) 
         <p className="text-xs font-bold uppercase tracking-widest text-neutral-500 px-3 mb-1">
           Tools
         </p>
-        {TOOLS.map(({ href, label }) => {
-          const active = pathname.startsWith(href);
-          return (
-            <Link
-              key={href}
-              href={href}
-              className={`block px-3 py-2 rounded text-sm transition-colors ${
-                active
-                  ? "bg-ucf-gold text-ucf-black font-semibold"
-                  : "text-gray-300 hover:text-ucf-white hover:bg-white/10"
-              }`}
-            >
-              {label}
-            </Link>
-          );
-        })}
+        {TOOLS.map(({ href, label }) => (
+          <Link
+            key={href}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block px-3 py-2 rounded text-sm transition-colors text-gray-300 hover:text-ucf-white hover:bg-white/10 flex items-center justify-between group"
+          >
+            <span>{label}</span>
+            <svg className="w-3 h-3 text-neutral-600 group-hover:text-neutral-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </Link>
+        ))}
       </div>
 
       {/* Spacer */}
