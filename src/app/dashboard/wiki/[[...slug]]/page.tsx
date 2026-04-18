@@ -12,12 +12,14 @@ export default async function WikiPage({ params }: Props) {
   if (!page) notFound();
 
   return (
-    <article>
-      <h1 className="text-3xl font-bold text-gray-900 mb-8">{page.title}</h1>
-      <div
-        className="wiki-body"
-        dangerouslySetInnerHTML={{ __html: page.content }}
-      />
-    </article>
+    <div className="p-8 bg-gray-50 min-h-screen">
+      <article>
+        <h1 className="text-3xl font-bold text-gray-900 mb-8">{page.title}</h1>
+        <div
+          className="wiki-body"
+          dangerouslySetInnerHTML={{ __html: page.content }}
+        />
+      </article>
+    </div>
   );
 }
