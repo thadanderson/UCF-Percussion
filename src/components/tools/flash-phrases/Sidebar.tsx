@@ -35,14 +35,14 @@ const Sidebar: React.FC<SidebarProps> = ({
         />
       )}
 
-      <aside className={`absolute md:relative top-0 left-0 h-full bg-gray-900 border-r border-gray-800 z-50 transform transition-all duration-300 ease-in-out flex flex-col ${isOpen ? 'translate-x-0 w-64' : '-translate-x-full md:translate-x-0 md:w-0 md:border-r-0 md:overflow-hidden'}`}>
-        <div className="flex items-center justify-between p-4 border-b border-gray-800 min-w-[16rem]">
+      <aside className={`absolute md:relative top-0 left-0 h-full bg-neutral-900 border-r border-neutral-800 z-50 transform transition-all duration-300 ease-in-out flex flex-col ${isOpen ? 'translate-x-0 w-64' : '-translate-x-full md:translate-x-0 md:w-0 md:border-r-0 md:overflow-hidden'}`}>
+        <div className="flex items-center justify-between p-4 border-b border-neutral-800 min-w-[16rem]">
           <div className="flex items-center gap-3 font-bold text-xl text-ucf-gold cursor-pointer group"
             onClick={() => handleLinkClick(() => onSelectView('HOME'))}>
             <FlashLogo className="w-8 h-8" />
             <span className="group-hover:text-ucf-white transition-colors">Flash Phrases</span>
           </div>
-          <button onClick={onClose} className="text-gray-400 hover:text-white">
+          <button onClick={onClose} className="text-neutral-400 hover:text-white">
             <X className="w-6 h-6 md:hidden" />
             <ChevronLeft className="w-6 h-6 hidden md:block" />
           </button>
@@ -50,8 +50,8 @@ const Sidebar: React.FC<SidebarProps> = ({
 
         <nav className="flex-1 overflow-y-auto p-4 min-w-[16rem]">
           {/* Info links */}
-          <div className="mb-6 border-b border-gray-800 pb-6">
-            <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 px-2">Information</h3>
+          <div className="mb-6 border-b border-neutral-800 pb-6">
+            <h3 className="text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-3 px-2">Information</h3>
             <ul className="space-y-1">
               {([
                 { view: 'HOME' as ViewType, label: 'Home', Icon: Home },
@@ -60,7 +60,7 @@ const Sidebar: React.FC<SidebarProps> = ({
               ]).map(({ view, label, Icon }) => (
                 <li key={view}>
                   <button onClick={() => handleLinkClick(() => onSelectView(view))}
-                    className={`w-full flex items-center gap-3 px-2 py-2 text-sm font-medium rounded-md transition-colors ${currentView === view ? 'bg-gray-800 text-white border border-gray-700' : 'text-gray-300 hover:bg-gray-800 hover:text-white'}`}>
+                    className={`w-full flex items-center gap-3 px-2 py-2 text-sm font-medium rounded-md transition-colors ${currentView === view ? 'bg-neutral-800 text-white border border-neutral-700' : 'text-neutral-300 hover:bg-neutral-800 hover:text-white'}`}>
                     <Icon className="w-4 h-4" /><span>{label}</span>
                   </button>
                 </li>
@@ -71,14 +71,14 @@ const Sidebar: React.FC<SidebarProps> = ({
           {/* Card categories */}
           {DATA.map((category) => (
             <div key={category.id} className="mb-6">
-              <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 px-2">{category.name}</h3>
+              <h3 className="text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-3 px-2">{category.name}</h3>
               <ul className="space-y-1">
                 {category.subCategories.map((sub) => {
                   const isActive = currentView === 'APP' && currentSubCategory.id === sub.id;
                   return (
                     <li key={sub.id}>
                       <button onClick={() => handleLinkClick(() => onSelectSubCategory(sub))}
-                        className={`w-full flex items-center gap-3 px-2 py-2 text-sm font-medium rounded-md transition-colors ${isActive ? 'bg-ucf-gold text-black' : 'text-gray-300 hover:bg-gray-800 hover:text-white'}`}>
+                        className={`w-full flex items-center gap-3 px-2 py-2 text-sm font-medium rounded-md transition-colors ${isActive ? 'bg-ucf-gold text-black' : 'text-neutral-300 hover:bg-neutral-800 hover:text-white'}`}>
                         <ListMusic className="w-4 h-4" /><span className="text-left">{sub.name}</span>
                       </button>
                     </li>
@@ -89,15 +89,15 @@ const Sidebar: React.FC<SidebarProps> = ({
           ))}
         </nav>
 
-        <div className="p-4 border-t border-gray-800 min-w-[16rem] space-y-3">
+        <div className="p-4 border-t border-neutral-800 min-w-[16rem] space-y-3">
           <button
             onClick={() => { window.opener ? window.close() : (window.location.href = "/dashboard/wiki"); }}
-            className="flex items-center gap-2 text-gray-500 hover:text-ucf-gold text-xs font-bold uppercase tracking-widest transition-colors">
+            className="flex items-center gap-2 text-neutral-500 hover:text-ucf-gold text-xs font-bold uppercase tracking-widest transition-colors">
             <LayoutDashboard className="w-4 h-4" /> Studio Dashboard
           </button>
-          <p className="text-[10px] text-gray-600">
+          <p className="text-[10px] text-neutral-600">
             Created by <a href="https://thadanderson.com" target="_blank" rel="noopener noreferrer"
-              className="text-gray-500 hover:text-ucf-gold transition-colors">Thad Anderson</a>
+              className="text-neutral-500 hover:text-ucf-gold transition-colors">Thad Anderson</a>
             <br />Copyright © 2026 · All Rights Reserved
           </p>
         </div>

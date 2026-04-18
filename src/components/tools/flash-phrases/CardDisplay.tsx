@@ -60,7 +60,7 @@ const CardDisplay: React.FC<CardDisplayProps> = ({
           </>
         )}
 
-        <div className="relative flex flex-col items-center max-w-full max-h-full bg-gray-800 rounded-xl shadow-2xl border-2 border-ucf-gold overflow-hidden w-full h-full aspect-[4/3] md:aspect-auto">
+        <div className="relative flex flex-col items-center max-w-full max-h-full bg-neutral-800 rounded-xl shadow-2xl border-2 border-ucf-gold overflow-hidden w-full h-full aspect-[4/3] md:aspect-auto">
           {!isCountIn && (
             <div className="absolute top-0 left-0 bg-ucf-gold text-black text-xs font-bold px-3 py-1 rounded-br-lg z-10">
               Current
@@ -83,29 +83,29 @@ const CardDisplay: React.FC<CardDisplayProps> = ({
           )}
 
           <div className={`flex flex-col w-full h-full transition-opacity duration-300 ${isCountIn ? 'opacity-30 blur-[2px]' : 'opacity-100'}`}>
-            <div className="flex-1 flex items-center justify-center bg-gray-100 relative min-h-0 w-full overflow-hidden">
+            <div className="flex-1 flex items-center justify-center bg-neutral-100 relative min-h-0 w-full overflow-hidden">
               {!currentImageError ? (
                 /* eslint-disable-next-line @next/next/no-img-element */
                 <img src={currentUrl} alt={currentPhrase.name}
                   className="max-w-full max-h-full object-contain"
                   onError={() => setCurrentImageError(true)} />
               ) : (
-                <div className="flex flex-col items-center justify-center text-gray-500 gap-4 p-6 text-center">
+                <div className="flex flex-col items-center justify-center text-neutral-500 gap-4 p-6 text-center">
                   <ImageOff className="w-12 h-12 text-red-400 opacity-50" />
                   <p className="text-sm text-red-300 font-mono">{currentUrl}</p>
                 </div>
               )}
             </div>
-            <div className="bg-gray-50 p-3 text-center border-t border-gray-200 w-full shrink-0">
-              <h2 className="text-lg md:text-2xl font-bold text-gray-800 tracking-tight">{currentPhrase.name}</h2>
+            <div className="bg-neutral-50 p-3 text-center border-t border-neutral-200 w-full shrink-0">
+              <h2 className="text-lg md:text-2xl font-bold text-neutral-800 tracking-tight">{currentPhrase.name}</h2>
             </div>
           </div>
         </div>
       </div>
 
       {/* Next Card */}
-      <div className={`relative w-full md:w-1/3 aspect-video bg-gray-800 rounded-lg shadow-lg border border-gray-700 opacity-60 overflow-hidden flex flex-col max-h-full transition-all duration-300 ${isCountIn ? 'opacity-20 blur-sm' : ''}`}>
-        <div className="absolute top-0 left-0 bg-gray-700 text-gray-300 text-xs font-bold px-3 py-1 rounded-br-lg z-10">Next</div>
+      <div className={`relative w-full md:w-1/3 aspect-video bg-neutral-800 rounded-lg shadow-lg border border-neutral-700 opacity-60 overflow-hidden flex flex-col max-h-full transition-all duration-300 ${isCountIn ? 'opacity-20 blur-sm' : ''}`}>
+        <div className="absolute top-0 left-0 bg-neutral-700 text-neutral-300 text-xs font-bold px-3 py-1 rounded-br-lg z-10">Next</div>
         <div className="flex-1 flex items-center justify-center">
           {!nextImageError ? (
             /* eslint-disable-next-line @next/next/no-img-element */
@@ -113,13 +113,13 @@ const CardDisplay: React.FC<CardDisplayProps> = ({
               className="w-full h-full object-contain grayscale"
               onError={() => setNextImageError(true)} />
           ) : (
-            <div className="flex flex-col items-center justify-center text-gray-500 gap-1">
+            <div className="flex flex-col items-center justify-center text-neutral-500 gap-1">
               <ImageOff className="w-8 h-8 opacity-30" />
             </div>
           )}
         </div>
-        <div className="bg-gray-900 p-2 text-center border-t border-gray-800">
-          <h2 className="text-sm font-medium text-gray-400">{nextPhrase.name}</h2>
+        <div className="bg-neutral-900 p-2 text-center border-t border-neutral-800">
+          <h2 className="text-sm font-medium text-neutral-400">{nextPhrase.name}</h2>
         </div>
       </div>
     </div>

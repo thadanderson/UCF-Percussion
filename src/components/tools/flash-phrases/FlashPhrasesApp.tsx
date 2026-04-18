@@ -275,7 +275,7 @@ export default function FlashPhrasesApp() {
   const isPlaying = playState !== PlayState.STOPPED;
 
   return (
-    <div className="relative flex bg-gray-900 text-white font-sans overflow-hidden" style={{ height: 'calc(100dvh - 64px)' }}>
+    <div className="relative flex bg-black text-white font-sans overflow-hidden" style={{ height: 'calc(100dvh - 64px)' }}>
       <Sidebar
         currentSubCategory={currentSubCategory}
         onSelectSubCategory={handleSubCategorySelect}
@@ -287,9 +287,9 @@ export default function FlashPhrasesApp() {
 
       <main className="flex-1 flex flex-col relative w-full h-full min-w-0 transition-all duration-300">
         {/* Mobile header */}
-        <div className="md:hidden flex items-center p-4 border-b border-gray-800 bg-gray-900 z-10 shrink-0 justify-between">
+        <div className="md:hidden flex items-center p-4 border-b border-neutral-800 bg-neutral-950 z-10 shrink-0 justify-between">
           <div className="flex items-center">
-            <button onClick={() => setSidebarOpen(true)} className="p-2 -ml-2 text-gray-400 hover:text-white">
+            <button onClick={() => setSidebarOpen(true)} className="p-2 -ml-2 text-neutral-400 hover:text-white">
               <Menu className="w-6 h-6" />
             </button>
             <h1 className="ml-2 text-lg font-bold text-ucf-gold truncate max-w-[150px]">Flash Phrases</h1>
@@ -304,7 +304,7 @@ export default function FlashPhrasesApp() {
 
         {!isSidebarOpen && (
           <button onClick={() => setSidebarOpen(true)}
-            className="hidden md:flex absolute top-4 left-4 z-20 bg-gray-800 text-gray-300 p-2 rounded-md hover:text-white hover:bg-gray-700 shadow-lg border border-gray-700"
+            className="hidden md:flex absolute top-4 left-4 z-20 bg-neutral-800 text-neutral-300 p-2 rounded-md hover:text-white hover:bg-neutral-700 shadow-lg border border-neutral-700"
             title="Open Menu">
             <PanelLeft className="w-6 h-6" />
           </button>
@@ -312,7 +312,7 @@ export default function FlashPhrasesApp() {
 
         {currentView === 'APP' ? (
           <>
-            <div className="flex-1 overflow-hidden relative bg-gradient-to-br from-gray-900 to-gray-800">
+            <div className="flex-1 overflow-hidden relative bg-black">
               <CardDisplay
                 currentPhrase={currentSubCategory.phrases[currentPhraseIndex]}
                 nextPhrase={currentSubCategory.phrases[nextPhraseIndex]}
@@ -336,21 +336,21 @@ export default function FlashPhrasesApp() {
                   <span className="font-bold uppercase tracking-wide text-sm w-12">{isPlaying ? 'Stop' : 'Start'}</span>
                 </button>
 
-                <div className="flex items-center gap-2 bg-gray-800/80 backdrop-blur-md border border-gray-700 rounded-lg px-3 py-2 shadow-lg">
-                  <button onClick={() => setTempo(Math.max(40, tempo - 5))} className="p-1 text-gray-400 hover:text-white">
+                <div className="flex items-center gap-2 bg-neutral-800/80 backdrop-blur-md border border-neutral-700 rounded-lg px-3 py-2 shadow-lg">
+                  <button onClick={() => setTempo(Math.max(40, tempo - 5))} className="p-1 text-neutral-400 hover:text-white">
                     <Minus className="w-4 h-4" />
                   </button>
                   <div className="text-center w-16">
                     <span className="text-xl font-mono font-black text-ucf-gold leading-none block">{tempo}</span>
-                    <span className="text-[9px] text-gray-500 font-bold uppercase">BPM</span>
+                    <span className="text-[9px] text-neutral-500 font-bold uppercase">BPM</span>
                   </div>
-                  <button onClick={() => setTempo(Math.min(240, tempo + 5))} className="p-1 text-gray-400 hover:text-white">
+                  <button onClick={() => setTempo(Math.min(240, tempo + 5))} className="p-1 text-neutral-400 hover:text-white">
                     <Plus className="w-4 h-4" />
                   </button>
                 </div>
 
-                <div className="flex flex-col justify-center bg-gray-800/80 backdrop-blur-md border border-gray-700 rounded-lg px-2 py-1 shadow-lg">
-                  <label className="text-[8px] text-gray-500 font-bold uppercase text-center mb-0.5">Count-in</label>
+                <div className="flex flex-col justify-center bg-neutral-800/80 backdrop-blur-md border border-neutral-700 rounded-lg px-2 py-1 shadow-lg">
+                  <label className="text-[8px] text-neutral-500 font-bold uppercase text-center mb-0.5">Count-in</label>
                   <select value={countInBars} onChange={(e) => handleSetCountIn(parseInt(e.target.value))}
                     className="bg-transparent text-ucf-gold font-bold text-xs focus:outline-none cursor-pointer text-center appearance-none">
                     <option value={1}>1 Bar</option>
@@ -363,13 +363,13 @@ export default function FlashPhrasesApp() {
               {/* Bar counter */}
               <div className="absolute top-4 right-4 z-10">
                 <div className="bg-black/40 backdrop-blur-sm border border-white/10 p-3 rounded-xl shadow-xl text-right min-w-[120px]">
-                  <h1 className="text-gray-300 tracking-tight opacity-80 uppercase text-xs mb-1 font-bold">{currentSubCategory.name}</h1>
+                  <h1 className="text-neutral-300 tracking-tight opacity-80 uppercase text-xs mb-1 font-bold">{currentSubCategory.name}</h1>
                   <div className="flex items-baseline justify-end gap-2">
-                    <span className="text-sm font-bold text-gray-400 uppercase">Bar</span>
+                    <span className="text-sm font-bold text-neutral-400 uppercase">Bar</span>
                     <span className="text-4xl font-black text-white tabular-nums tracking-tighter">
                       {playState === PlayState.PLAYING && currentBarCount > 0 ? currentBarCount : 1}
-                      <span className="text-gray-500 text-2xl">/</span>
-                      <span className="text-gray-400 text-3xl">{repetition}</span>
+                      <span className="text-neutral-500 text-2xl">/</span>
+                      <span className="text-neutral-400 text-3xl">{repetition}</span>
                     </span>
                   </div>
                 </div>
@@ -399,7 +399,7 @@ export default function FlashPhrasesApp() {
             />
           </>
         ) : (
-          <div className="flex-1 bg-gray-900 overflow-hidden flex flex-col">
+          <div className="flex-1 bg-black overflow-hidden flex flex-col">
             {currentView === 'HOME' && <HomeView />}
             {currentView === 'GUIDE' && <GuideView />}
             {currentView === 'SOURCES' && <SourcesView />}

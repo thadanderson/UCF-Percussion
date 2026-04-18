@@ -4,15 +4,15 @@ import { BookOpen, Info } from 'lucide-react';
 import { FlashLogo } from './FlashLogo';
 
 export const HomeView: React.FC = () => (
-  <div className="flex-1 overflow-y-auto p-6 md:p-12 max-w-4xl mx-auto w-full text-gray-300 flex flex-col justify-center items-center text-center h-full">
+  <div className="flex-1 overflow-y-auto p-6 md:p-12 max-w-4xl mx-auto w-full text-neutral-300 flex flex-col justify-center items-center text-center h-full">
     <div className="mb-8">
       <div className="bg-ucf-gold/20 p-8 rounded-full inline-block mb-6 shadow-lg shadow-ucf-gold/10">
         <FlashLogo className="w-24 h-24 text-ucf-gold" />
       </div>
       <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Welcome to Flash Phrases</h1>
     </div>
-    <div className="max-w-2xl bg-gray-800/50 p-8 rounded-2xl border border-gray-700 shadow-xl backdrop-blur-sm">
-      <p className="text-lg md:text-xl leading-relaxed text-gray-300 text-left">
+    <div className="max-w-2xl bg-neutral-800/50 p-8 rounded-2xl border border-neutral-700 shadow-xl backdrop-blur-sm">
+      <p className="text-lg md:text-xl leading-relaxed text-neutral-300 text-left">
         Flash Phrases is a coordination training tool for drum set players. It features flashcard phrase variations,
         metronome integration, and customizable playback settings. During playback, it will display single-bar flash
         cards of phrase variations for snare drum and/or bass drum voices. These are intended to be combined with
@@ -24,8 +24,8 @@ export const HomeView: React.FC = () => (
 );
 
 export const GuideView: React.FC = () => (
-  <div className="flex-1 overflow-y-auto p-6 md:p-12 max-w-4xl mx-auto w-full text-gray-300">
-    <div className="flex items-center gap-3 mb-8 pb-4 border-b border-gray-700">
+  <div className="flex-1 overflow-y-auto p-6 md:p-12 max-w-4xl mx-auto w-full text-neutral-300">
+    <div className="flex items-center gap-3 mb-8 pb-4 border-b border-neutral-700">
       <Info className="w-8 h-8 text-ucf-gold" />
       <h1 className="text-3xl font-bold text-white">Guide</h1>
     </div>
@@ -38,14 +38,14 @@ export const GuideView: React.FC = () => (
         { title: 'Phrase Repetition', body: 'Single-bar phrases can repeat 1×, 2×, 4×, or 8× before advancing to the next.' },
         { title: 'Mode', body: 'Use Linear for sequential phrase order or Random for a shuffled order.' },
       ].map(({ title, body }) => (
-        <section key={title} className="bg-gray-800/50 p-6 rounded-xl border border-gray-700">
+        <section key={title} className="bg-neutral-800/50 p-6 rounded-xl border border-neutral-700">
           <h3 className="text-white font-bold text-lg mb-2 flex items-center gap-2">
             <span className="bg-ucf-gold w-2 h-6 rounded-full" />{title}
           </h3>
           <p>{body}</p>
         </section>
       ))}
-      <section className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 md:col-span-2">
+      <section className="bg-neutral-800/50 p-6 rounded-xl border border-neutral-700 md:col-span-2">
         <h3 className="text-white font-bold text-lg mb-2 flex items-center gap-2">
           <span className="bg-ucf-gold w-2 h-6 rounded-full" />Phrase Selector
         </h3>
@@ -56,20 +56,20 @@ export const GuideView: React.FC = () => (
 );
 
 export const SourcesView: React.FC = () => (
-  <div className="flex-1 overflow-y-auto p-6 md:p-12 max-w-3xl mx-auto w-full text-gray-300">
-    <div className="flex items-center gap-3 mb-8 pb-4 border-b border-gray-700">
+  <div className="flex-1 overflow-y-auto p-6 md:p-12 max-w-3xl mx-auto w-full text-neutral-300">
+    <div className="flex items-center gap-3 mb-8 pb-4 border-b border-neutral-700">
       <BookOpen className="w-8 h-8 text-ucf-gold" />
       <h1 className="text-3xl font-bold text-white">Sources</h1>
     </div>
     <div className="space-y-6">
-      <div className="bg-gray-800 p-8 rounded-2xl shadow-lg border-l-4 border-ucf-gold">
+      <div className="bg-neutral-800 p-8 rounded-2xl shadow-lg border-l-4 border-ucf-gold">
         <h2 className="text-xl font-bold text-white mb-2">Rock &amp; Funk</h2>
-        <p className="text-gray-400 mb-4 text-sm uppercase tracking-wider">Phrase Variations</p>
+        <p className="text-neutral-400 mb-4 text-sm uppercase tracking-wider">Phrase Variations</p>
         <p className="text-lg">Can be found in: <span className="font-bold text-white italic">It&rsquo;s About Time</span> by Fred Dinkins</p>
       </div>
-      <div className="bg-gray-800 p-8 rounded-2xl shadow-lg border-l-4 border-ucf-gold/50">
+      <div className="bg-neutral-800 p-8 rounded-2xl shadow-lg border-l-4 border-ucf-gold/50">
         <h2 className="text-xl font-bold text-white mb-2">Swing</h2>
-        <p className="text-gray-400 mb-4 text-sm uppercase tracking-wider">Phrase Variations</p>
+        <p className="text-neutral-400 mb-4 text-sm uppercase tracking-wider">Phrase Variations</p>
         <p className="text-lg">Can be found in: <span className="font-bold text-white italic">Studio/Jazz Drum Cookbook</span> by John Pickering</p>
       </div>
     </div>
