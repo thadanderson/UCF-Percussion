@@ -65,6 +65,21 @@ export default async function DashboardPage() {
         </Link>
       </div>
 
+      {/* Studio Calendar */}
+      <div className="mt-12 border-t border-neutral-800 pt-8">
+        <p className="text-xs text-neutral-600 font-bold uppercase tracking-widest mb-4">Studio Calendar</p>
+        <div className="rounded-sm overflow-hidden border border-neutral-800">
+          <iframe
+            title="UCF Percussion Studio Calendar"
+            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&src=dWNmcGVyY3Vzc2lvbkBnbWFpbC5jb20&color=%23b8a000&showPrint=0&showTabs=1&showCalendars=0"
+            width="100%"
+            height="600"
+            loading="lazy"
+            style={{ border: 0, display: "block" }}
+          />
+        </div>
+      </div>
+
       {isAdmin && (
         <div className="mt-12 border-t border-neutral-800 pt-8">
           <p className="text-xs text-neutral-600 font-bold uppercase tracking-widest mb-4">Administration</p>
