@@ -90,10 +90,11 @@ const Sidebar: React.FC<SidebarProps> = ({
         </nav>
 
         <div className="p-4 border-t border-gray-800 min-w-[16rem] space-y-3">
-          <Link href="/dashboard"
+          <button
+            onClick={() => { window.opener ? window.close() : (window.location.href = "/dashboard/wiki"); }}
             className="flex items-center gap-2 text-gray-500 hover:text-ucf-gold text-xs font-bold uppercase tracking-widest transition-colors">
             <LayoutDashboard className="w-4 h-4" /> Studio Dashboard
-          </Link>
+          </button>
           <p className="text-[10px] text-gray-600">
             Created by <a href="https://thadanderson.com" target="_blank" rel="noopener noreferrer"
               className="text-gray-500 hover:text-ucf-gold transition-colors">Thad Anderson</a>

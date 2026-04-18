@@ -71,6 +71,15 @@ const SideMenu: React.FC<SideMenuProps> = ({ data, selectedLevel, selectedCatego
               </svg>
               Return Home
             </button>
+            <button
+              onClick={() => { window.opener ? window.close() : (window.location.href = "/dashboard/wiki"); }}
+              className="w-full py-3 px-4 border border-neutral-700 hover:border-ucf-gold/60 text-neutral-600 hover:text-ucf-gold text-xs font-bold uppercase tracking-widest transition-colors rounded-sm flex items-center justify-center gap-2"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+              </svg>
+              Studio Dashboard
+            </button>
             <p className="text-[10px] uppercase tracking-wider text-neutral-600 text-center">Select Collection</p>
           </div>
         </div>
